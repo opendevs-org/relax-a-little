@@ -1,133 +1,179 @@
 {
-	"name": "relax-a-little",
-	"displayName": "relax-a-little",
-	"description": "This extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges while also changes theme to dark mode automatically in the evening if not already set as dark. Comes with lot of configurations to control time of reminder, interval, water amount in a day you want to intake and more",
-	"version": "0.0.1",
-	"author": {
-		"name": "open devs",
-		"email": "open.devs.github@gmail.com",
-		"url": "https://opendevs.in"
-	},
-	"contributors": [
-		"Mihir Kumar (mikr13)",
-		"Alok Raj (alok722)"
-	],
-	"license": "MIT",
-	"homepage": "https://github.com/open-devs/relax-a-little",
-	"bugs": {
-		"url": "https://github.com/open-devs/relax-a-little/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/open-devs/relax-a-little.git"
-	},
-	"engines": {
-		"vscode": "^1.52.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"keywords": [
-		"day",
-		"night",
-		"relax",
-		"break",
-		"sunrise",
-		"sunset",
-		"switch",
-		"theme",
-		"vscode"
-	],
-	"activationEvents": [
-		"*"
-	],
-	"main": "./src/extension.js",
-	"contributes": {
-		"commands": [{
-				"command": "relaxALittle.switchToNightTheme",
-				"title": "relax-a-little: Switch to night theme 🌑"
-			},
-			{
-				"command": "relaxALittle.switchToDayTheme",
-				"title": "relax-a-little: Switch to day theme 🌕"
-			},
-			{
-				"command": "relaxALittle.toggleDayNightTheme",
-				"title": "relax-a-little: Toggle Day/Night Theme"
-			},
-			{
-				"command": "relaxALittle.enableExtension",
-				"title": "relax-a-little: Enable extension"
-			},
-			{
-				"command": "relaxALittle.disableExtension",
-				"title": "relax-a-little: Disable extension"
-			},
-			{
-				"command": "relaxALittle.pauseUntilNextCircle",
-				"title": "relax-a-little: Pause until next circle"
-			}
-		]
-	},
-	"scripts": {
-		"lint": "eslint .",
-		"pretest": "yarn run lint",
-		"test": "node ./test/runTest.js",
-		"commit-a": "git add . && git cz",
-		"commit": "git cz"
-	},
-	"devDependencies": {
-		"@release-it/conventional-changelog": "^2.0.0",
-		"@types/vscode": "^1.52.0",
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.0.4",
-		"@types/node": "^12.11.7",
-		"eslint": "^7.19.0",
-		"git-cz": "^4.7.6",
-		"glob": "^7.1.6",
-		"mocha": "^8.2.1",
-		"typescript": "^4.1.3",
-		"vscode-test": "^1.5.0"
-	},
-	"configuration": {
-		"type": "object",
-		"title": "relax-a-little Configurations",
-		"properties": {
-			"relaxALittle.sunrise": {
-				"type": "string",
-				"default": "07:00",
-				"description": "Set the sunrise time. (24 hour format)"
-			},
-			"relaxALittle.sunset": {
-				"type": "string",
-				"default": "19:00",
-				"description": "Set the sunset time. (24 hour format)"
-			},
-			"relaxALittle.interval": {
-				"type": "number",
-				"default": 5,
-				"description": "Set in which interval relax-a-little should check the time. (in minutes)"
-			},
-			"relaxALittle.minutesTillBreak": {
-				"type": "number",
-				"default": 25,
-				"description": "Time in minutes until theme colors start fading out."
-			},
-			"relaxALittle.winddownDurationMinutes": {
-				"type": "number",
-				"default": 5,
-				"description": "Time in minutes until theme colors have fully faded out."
-			},
-			"relaxALittle.breakDurationMinutes": {
-				"type": "number",
-				"default": 3,
-				"description": "Time in minutes until theme colors are reset to normal."
-			},
-			"relaxALittle.minutesTillWaterBreak": {
-				"type": "number",
-				"default": 15,
-				"description": "Time in minutes until water break."
-			}
-		}
-	}
+  "name": "relax-a-little",
+  "displayName": "Relax a Little",
+  "publisher": "open-devs",
+  "description": "This extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges while also changes theme to dark mode automatically in the evening if not already set as dark. Comes with lot of configurations to control time of reminder, interval, water amount in a day you want to intake and more",
+  "version": "0.0.2",
+  "author": {
+    "name": "open devs",
+    "email": "open.devs.github@gmail.com",
+    "url": "https://opendevs.in"
+  },
+  "contributors": [
+    "Mihir Kumar (mikr13)",
+    "Alok Raj (alok722)"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/open-devs/relax-a-little",
+  "bugs": {
+    "url": "https://github.com/open-devs/relax-a-little/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/open-devs/relax-a-little.git"
+  },
+  "engines": {
+    "vscode": "^1.52.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "day",
+    "night",
+    "relax",
+    "break",
+    "sunrise",
+    "sunset",
+    "switch",
+    "theme",
+    "vscode"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [{
+        "command": "relaxALittle.switchToNightTheme",
+        "title": "relax-a-little: Switch to night theme 🌑"
+      },
+      {
+        "command": "relaxALittle.switchToDayTheme",
+        "title": "relax-a-little: Switch to day theme 🌕"
+      },
+      {
+        "command": "relaxALittle.toggleDayNightTheme",
+        "title": "relax-a-little: Toggle Day/Night Theme"
+      },
+      {
+        "command": "relaxALittle.enableExtension",
+        "title": "relax-a-little: Enable extension"
+      },
+      {
+        "command": "relaxALittle.disableExtension",
+        "title": "relax-a-little: Disable extension"
+      },
+      {
+        "command": "relaxALittle.enableWinddown",
+        "title": "relax-a-little: Enable Winddown"
+      },
+      {
+        "command": "relaxALittle.disableWinddown",
+        "title": "relax-a-little: Disable Winddown"
+      },
+      {
+        "command": "relaxALittle.enableThemeChanger",
+        "title": "relax-a-little: Enable Theme Changer"
+      },
+      {
+        "command": "relaxALittle.disableThemeChanger",
+        "title": "relax-a-little: Disable Theme Changer"
+      },
+      {
+        "command": "relaxALittle.enableWaterBreak",
+        "title": "relax-a-little: Enable Water Break"
+      },
+      {
+        "command": "relaxALittle.disableWaterBreak",
+        "title": "relax-a-little: Disable Water Break"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Relax a Little",
+      "properties": {
+        "relaxALittle.sunrise": {
+          "format": "time",
+          "name": "sunrise",
+          "type": "string",
+          "default": "07:00",
+          "description": "Set the sunrise time. (24 hour format)"
+        },
+        "relaxALittle.sunset": {
+          "format": "time",
+          "type": "string",
+          "default": "19:00",
+          "description": "Set the sunset time. (24 hour format)"
+        },
+        "relaxALittle.interval": {
+          "minimum": 1,
+          "maximum": 5,
+          "type": "number",
+          "default": 5,
+          "description": "Set in which interval relax-a-little should check the time. (in minutes)"
+        },
+        "relaxALittle.minutesTillBreak": {
+          "minimum": 10,
+          "type": "number",
+          "default": 25,
+          "description": "Time in minutes until theme colors start fading out."
+        },
+        "relaxALittle.winddownDurationMinutes": {
+          "minimum": 3,
+          "type": "number",
+          "default": 3,
+          "description": "Time in minutes until theme colors have fully faded out."
+        },
+        "relaxALittle.breakDurationMinutes": {
+          "minimum": 1,
+          "type": "number",
+          "default": 3,
+          "description": "Time in minutes until theme colors are reset to normal."
+        },
+        "relaxALittle.winddownFramesPerMinute": {
+          "type": "number",
+          "default": 4,
+          "description": "Color update frequency during winddown phase. Usually you do not need to change this. Lower it if you are distracted by screen flashes, increase it for smoother color transitions. Must be between 1 and 60."
+        },
+        "relaxALittle.minutesTillWaterBreak": {
+          "minimum": 1,
+          "type": "number",
+          "default": 15,
+          "description": "Time in minutes until water break."
+        },
+        "relaxALittle.waterBreakBlocking": {
+          "type": "boolean",
+          "default": false,
+          "description": "Should water break notification be blocking or non blocking?"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "dev": "webpack --mode development --progress",
+    "build": "webpack --mode production",
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js",
+    "commit-a": "git add . && git cz",
+    "commit": "git cz"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^2.0.0",
+    "eslint": "^7.19.0",
+    "git-cz": "^4.7.6",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "vsce": "^1.74.0",
+    "vscode-test": "^1.5.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.21.1",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "chroma-js": "^2.1.0",
+    "json5": "^2.2.0"
+  }
 }

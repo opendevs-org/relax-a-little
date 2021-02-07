@@ -1,41 +1,72 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-const vscode = require('vscode')
+const { window, ExtensionContext, workspace, } = require('vscode')
+const { getConfig, checkAffectConfig } = require('./utils')
+const { start: winddownStart, stop: winddownStop, configure: winddownConfigure, logActivity: winddownLogActivity } = require('./wind-down/index')
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 
 /**
- * @param {vscode.ExtensionContext} context
+ * Log user activity.
+ */
+const onActivity = () => {
+  winddownLogActivity()
+}
+
+/**
+ * Update the color configuration.
+ */
+const onChange = () => {
+  winddownConfigure(getConfig())
+}
+
+/**
+ * Reload the configuration.
+ */
+const reconfigure = () => {
+  winddownConfigure(getConfig())
+}
+
+
+const configChanged = (event) => {
+  if (event.affectsConfiguration('workbench.preferredDarkColorTheme') ||
+    event.affectsConfiguration('workbench.preferredDarkColorTheme') ||
+    event.affectsConfiguration('workbench.colorTheme')) {
+    onChange()
+  }
+
+  if (checkAffectConfig(event)) {
+    reconfigure()
+  }
+}
+
+const start = () => {
+  winddownStart(getConfig())
+}
+
+/**
+ * @param {ExtensionContext} context
  */
 function activate (context) {
+  reconfigure()
+  start()
+  onChange()
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "relax-a-little" is now active!')
-
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	context.subscriptions.push(vscode.commands.registerCommand('relax-a-little.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from relax-a-little!')
-	}))
-	context.subscriptions.push(vscode.commands.registerCommand('relax-a-little.helloAlok', function () {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello Alok from relax-a-little!')
-	}))
-
+  context.subscriptions.push(window.onDidChangeWindowState(onActivity))
+  context.subscriptions.push(window.onDidChangeActiveTextEditor(onActivity))
+  context.subscriptions.push(window.onDidChangeTextEditorViewColumn(onActivity))
+  context.subscriptions.push(window.onDidChangeTextEditorSelection(onActivity))
+  context.subscriptions.push(window.onDidChangeActiveTextEditor(onActivity))
+  context.subscriptions.push(workspace.onDidChangeConfiguration(configChanged))
 }
 
 // this method is called when your extension is deactivated
-function deactivate () { }
+function deactivate () {
+  winddownStop()
+}
 
 module.exports = {
-	activate,
-	deactivate
+  activate,
+  deactivate
 }

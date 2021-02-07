@@ -1,3 +1,6 @@
+dist
+out
 node_modules
-.vscode-test/
-*.vsix
+tmp
+.cache
+.eslintcache

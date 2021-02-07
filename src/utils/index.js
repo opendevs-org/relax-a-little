@@ -1,3 +1,10 @@
-import { workspace } from 'vscode'
+const { workspace } = require('vscode')
 
-export const getConfig = () => workspace.getConfiguration('relaxALittle')
+const getConfig = () => workspace.getConfiguration('relaxALittle')
+
+const checkAffectConfig = (event) => event.affectsConfiguration('relaxALittle')
+
+module.exports = {
+    getConfig,
+    checkAffectConfig
+}
