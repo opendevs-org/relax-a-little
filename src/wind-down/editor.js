@@ -3,7 +3,7 @@ const { readFileSync } = require('fs')
 const path = require('path')
 const chroma = require('chroma-js')
 const json5 = require('json5')
-const { getConfig } = require('../utils/index')
+// const { getConfig } = require('../utils/index')
 
 /**
  * Load the current theme's configuration files.

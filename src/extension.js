@@ -3,6 +3,7 @@
 const { window, ExtensionContext, commands, workspace, } = require('vscode')
 const { getConfig, checkAffectConfig } = require('./utils')
 const { start: winddownStart, stop: winddownStop, configure: winddownConfigure, logActivity: winddownLogActivity } = require('./wind-down/index')
+const { start: waterBreakStart , stop: waterBreakStop} = require('./water-break/index');
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -43,12 +44,13 @@ const configChanged = (event) => {
 
 const start = () => {
   winddownStart(getConfig())
+  waterBreakStart(getConfig())
 }
 
 /**
  * @param {ExtensionContext} context
  */
-function activate (context) {
+const activate = (context) => {
   reconfigure()
   start()
   onChange()
@@ -63,12 +65,15 @@ function activate (context) {
   commands.registerCommand('relaxALittle.enableExtension', start)
   commands.registerCommand('relaxALittle.disableExtension', deactivate)
   commands.registerCommand('relaxALittle.enableWinddown', () => winddownStart(getConfig()))
-  commands.registerCommand('relaxALittle.disableWinddown', winddownStop)
+  commands.registerCommand('relaxALittle.disableWinddown', () => winddownStop(getConfig()))
+  commands.registerCommand('relaxALittle.enableWaterBreak', () => waterBreakStart(getConfig()))
+  commands.registerCommand('relaxALittle.disableWaterBreak', () => waterBreakStop(getConfig()))
 }
 
 // this method is called when your extension is deactivated
-function deactivate () {
-  winddownStop()
+const deactivate = () => {
+  winddownStop(getConfig())
+  waterBreakStop(getConfig())
 }
 
 module.exports = {

@@ -132,7 +132,7 @@
           "default": true,
           "description": "Is winddown feature running or do you need it?"
         },
-        "relaxALittle.waterBreakFeatureActive": {
+        "relaxALittle.waterBreakActive": {
           "type": "boolean",
           "default": true,
           "description": "Is water break reminder feature running or do you need it?"

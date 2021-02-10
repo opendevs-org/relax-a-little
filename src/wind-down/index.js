@@ -1,5 +1,5 @@
 const { window, StatusBarAlignment, workspace } = require('vscode')
-const { getConfig } = require('../utils')
+const { getConfig } = require('../utils/index')
 // @ts-ignore
 const { reset: resetEditor, setSaturation } = require('./editor')
 
@@ -70,8 +70,8 @@ const start = (config) => {
   reset()
 }
 
-const stop = () => {
-  if (!getConfig().winddownActive) {
+const stop = (config) => {
+  if (!config.winddownActive) {
     return
   }
   const workspaceSettings = workspace.getConfiguration()
