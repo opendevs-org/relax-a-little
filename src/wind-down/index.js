@@ -1,4 +1,4 @@
-const { window, StatusBarAlignment } = require('vscode')
+const { window, StatusBarAlignment, workspace } = require('vscode')
 const { getConfig } = require('../utils')
 // @ts-ignore
 const { reset: resetEditor, setSaturation } = require('./editor')
@@ -57,6 +57,12 @@ const update = (config) => {
 }
 
 const start = (config) => {
+  if (config.winddownActive) {
+    return
+  }
+  const workspaceSettings = workspace.getConfiguration()
+  workspaceSettings.update('relaxALittle.winddownActive', true, true)
+    .then(undefined, (reason) => console.error(reason))
   const framesPerMinute = Math.min(60, Math.max(1, config.winddownFramesPerMinute))
   timer = setInterval(() => {
     update(getConfig())
@@ -65,6 +71,12 @@ const start = (config) => {
 }
 
 const stop = () => {
+  if (!getConfig().winddownActive) {
+    return
+  }
+  const workspaceSettings = workspace.getConfiguration()
+  workspaceSettings.update('relaxALittle.winddownActive', false, true)
+    .then(undefined, (reason) => console.error(reason))
   reset()
   clearInterval(timer)
 }

@@ -1,6 +1,6 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-const { window, ExtensionContext, workspace, } = require('vscode')
+const { window, ExtensionContext, commands, workspace, } = require('vscode')
 const { getConfig, checkAffectConfig } = require('./utils')
 const { start: winddownStart, stop: winddownStop, configure: winddownConfigure, logActivity: winddownLogActivity } = require('./wind-down/index')
 
@@ -59,6 +59,11 @@ function activate (context) {
   context.subscriptions.push(window.onDidChangeTextEditorSelection(onActivity))
   context.subscriptions.push(window.onDidChangeActiveTextEditor(onActivity))
   context.subscriptions.push(workspace.onDidChangeConfiguration(configChanged))
+
+  commands.registerCommand('relaxALittle.enableExtension', start)
+  commands.registerCommand('relaxALittle.disableExtension', deactivate)
+  commands.registerCommand('relaxALittle.enableWinddown', () => winddownStart(getConfig()))
+  commands.registerCommand('relaxALittle.disableWinddown', winddownStop)
 }
 
 // this method is called when your extension is deactivated

@@ -45,18 +45,6 @@
   "main": "./src/extension.js",
   "contributes": {
     "commands": [{
-        "command": "relaxALittle.switchToNightTheme",
-        "title": "relax-a-little: Switch to night theme 🌑"
-      },
-      {
-        "command": "relaxALittle.switchToDayTheme",
-        "title": "relax-a-little: Switch to day theme 🌕"
-      },
-      {
-        "command": "relaxALittle.toggleDayNightTheme",
-        "title": "relax-a-little: Toggle Day/Night Theme"
-      },
-      {
         "command": "relaxALittle.enableExtension",
         "title": "relax-a-little: Enable extension"
       },
@@ -71,14 +59,6 @@
       {
         "command": "relaxALittle.disableWinddown",
         "title": "relax-a-little: Disable Winddown"
-      },
-      {
-        "command": "relaxALittle.enableThemeChanger",
-        "title": "relax-a-little: Enable Theme Changer"
-      },
-      {
-        "command": "relaxALittle.disableThemeChanger",
-        "title": "relax-a-little: Disable Theme Changer"
       },
       {
         "command": "relaxALittle.enableWaterBreak",
@@ -146,6 +126,16 @@
           "type": "boolean",
           "default": false,
           "description": "Should water break notification be blocking or non blocking?"
+        },
+        "relaxALittle.winddownActive": {
+          "type": "boolean",
+          "default": true,
+          "description": "Is winddown feature running or do you need it?"
+        },
+        "relaxALittle.waterBreakFeatureActive": {
+          "type": "boolean",
+          "default": true,
+          "description": "Is water break reminder feature running or do you need it?"
         }
       }
     }
