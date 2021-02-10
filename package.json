@@ -73,26 +73,6 @@
       "type": "object",
       "title": "Relax a Little",
       "properties": {
-        "relaxALittle.sunrise": {
-          "format": "time",
-          "name": "sunrise",
-          "type": "string",
-          "default": "07:00",
-          "description": "Set the sunrise time. (24 hour format)"
-        },
-        "relaxALittle.sunset": {
-          "format": "time",
-          "type": "string",
-          "default": "19:00",
-          "description": "Set the sunset time. (24 hour format)"
-        },
-        "relaxALittle.interval": {
-          "minimum": 1,
-          "maximum": 5,
-          "type": "number",
-          "default": 5,
-          "description": "Set in which interval relax-a-little should check the time. (in minutes)"
-        },
         "relaxALittle.minutesTillBreak": {
           "minimum": 10,
           "type": "number",
@@ -113,7 +93,7 @@
         },
         "relaxALittle.winddownFramesPerMinute": {
           "type": "number",
-          "default": 4,
+          "default": 6,
           "description": "Color update frequency during winddown phase. Usually you do not need to change this. Lower it if you are distracted by screen flashes, increase it for smoother color transitions. Must be between 1 and 60."
         },
         "relaxALittle.minutesTillWaterBreak": {
@@ -126,16 +106,6 @@
           "type": "boolean",
           "default": false,
           "description": "Should water break notification be blocking or non blocking?"
-        },
-        "relaxALittle.winddownActive": {
-          "type": "boolean",
-          "default": true,
-          "description": "Is winddown feature running or do you need it?"
-        },
-        "relaxALittle.waterBreakActive": {
-          "type": "boolean",
-          "default": true,
-          "description": "Is water break reminder feature running or do you need it?"
         }
       }
     }

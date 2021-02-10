@@ -1,27 +1,28 @@
-const { window, workspace } = require('vscode')
+const { window } = require('vscode')
 
 let timer
+let alreadyRunning = false
 
 const start = (config) => {
-  if (config.waterBreakActive) {
+  if (alreadyRunning) {
+    window.showInformationMessage('water break is already running')
     return
   }
-  const workspaceSettings = workspace.getConfiguration()
-  workspaceSettings.update('relaxALittle.waterBreakActive', true, true)
-    .then(undefined, (reason) => console.error(reason))
+
+  alreadyRunning = true
   timer = setInterval(() => {
-    window.showInformationMessage('It\'s time to drink Water.');
-  }, 1000 * 60 / config.minutesTillWaterBreak)
+    window.showInformationMessage('It\'s time to drink Water.')
+  }, 1000 * 60 * config.minutesTillWaterBreak)
 }
 
-const stop = (config) => {
-  if (!config.winddownActive) {
+const stop = () => {
+  if (!alreadyRunning) {
+    window.showInformationMessage('water break is already stopped')
     return
   }
-  const workspaceSettings = workspace.getConfiguration()
-  workspaceSettings.update('relaxALittle.winddownActive', false, true)
-    .then(undefined, (reason) => console.error(reason))
-  clearInterval(timer);
+
+  alreadyRunning = false
+  clearInterval(timer)
 }
 
 module.exports = {

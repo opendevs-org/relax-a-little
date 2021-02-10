@@ -1,4 +1,4 @@
-const { window, StatusBarAlignment, workspace } = require('vscode')
+const { window, StatusBarAlignment } = require('vscode')
 const { getConfig } = require('../utils/index')
 // @ts-ignore
 const { reset: resetEditor, setSaturation } = require('./editor')
@@ -8,6 +8,7 @@ let lastActive // last activity
 let currentSaturation = 1.0
 let timer
 let statusBarItem
+let alreadyRunning = false
 
 firstActive = Date.now()
 lastActive = Date.now()
@@ -57,12 +58,12 @@ const update = (config) => {
 }
 
 const start = (config) => {
-  if (config.winddownActive) {
+  if (alreadyRunning) {
+    window.showInformationMessage('wind down is already running')
     return
   }
-  const workspaceSettings = workspace.getConfiguration()
-  workspaceSettings.update('relaxALittle.winddownActive', true, true)
-    .then(undefined, (reason) => console.error(reason))
+
+  alreadyRunning = true
   const framesPerMinute = Math.min(60, Math.max(1, config.winddownFramesPerMinute))
   timer = setInterval(() => {
     update(getConfig())
@@ -70,15 +71,15 @@ const start = (config) => {
   reset()
 }
 
-const stop = (config) => {
-  if (!config.winddownActive) {
+const stop = () => {
+  if (!alreadyRunning) {
+    window.showInformationMessage('wind down is already stopped')
     return
   }
-  const workspaceSettings = workspace.getConfiguration()
-  workspaceSettings.update('relaxALittle.winddownActive', false, true)
-    .then(undefined, (reason) => console.error(reason))
-  reset()
+
+  alreadyRunning = false
   clearInterval(timer)
+  reset()
 }
 
 const configure = (config) => update(config)
