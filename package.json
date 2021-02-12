@@ -102,10 +102,10 @@
           "default": 15,
           "description": "Time in minutes until water break."
         },
-        "relaxALittle.waterBreakBlocking": {
+        "relaxALittle.enableBlockingNotification": {
           "type": "boolean",
           "default": false,
-          "description": "Should water break notification be blocking or non blocking?"
+          "description": "Should notification be blocking or non blocking?"
         }
       }
     }
