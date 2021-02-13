@@ -65,7 +65,7 @@ In status bar:
 - Website: https://opendevs.in/
 - Twitter: [@opendevs_2020](https://twitter.com/@opendevs_2020)
 - Github: [@open-devs](https://github.com/open-devs)
-- LinkedIn: [@open-devs](https://www.linkedin.com/company/71491779)
+- LinkedIn: [@open-devs](https://www.linkedin.com/company/open-devs/)
 - core members: [@mikr13](https://github.com/mikr13), [@alok722](https://github.com/alok722)
 
 ## 🤝 contributing
