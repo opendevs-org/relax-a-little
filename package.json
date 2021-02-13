@@ -74,13 +74,13 @@
       "title": "Relax a Little",
       "properties": {
         "relaxALittle.minutesTillBreak": {
-          "minimum": 10,
+          "minimum": 1,
           "type": "number",
           "default": 25,
           "description": "Time in minutes until theme colors start fading out."
         },
         "relaxALittle.winddownDurationMinutes": {
-          "minimum": 3,
+          "minimum": 1,
           "type": "number",
           "default": 3,
           "description": "Time in minutes until theme colors have fully faded out."
@@ -101,11 +101,6 @@
           "type": "number",
           "default": 15,
           "description": "Time in minutes until water break."
-        },
-        "relaxALittle.enableBlockingNotification": {
-          "type": "boolean",
-          "default": false,
-          "description": "Should notification be blocking or non blocking?"
         }
       }
     }

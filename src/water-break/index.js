@@ -12,7 +12,7 @@ const start = (config) => {
 
   alreadyRunning = true
   timer = setInterval(() => {
-    if(config.enableBlockingNotification) {
+    if (config.enableBlockingNotification) {
       window.showInformationMessage('It\'s time to drink Water. 👀💧', 'alright!')
     }
     if (!statusBarItem) {
@@ -20,6 +20,10 @@ const start = (config) => {
     }
     statusBarItem.text = 'Please take a water break now!'
     statusBarItem.show()
+
+    setTimeout(() => {
+      statusBarItem.hide()
+    }, 10 * 1000)
   }, 1000 * 60 * config.minutesTillWaterBreak)
 }
 
@@ -35,7 +39,15 @@ const stop = () => {
   clearInterval(timer)
 }
 
+const reset = (config) => {
+  if (alreadyRunning) {
+    stop()
+    start(config)
+  }
+}
+
 module.exports = {
   start,
-  stop
+  stop,
+  reset
 }
