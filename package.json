@@ -2,7 +2,13 @@
   "name": "relax-a-little",
   "displayName": "Relax a Little",
   "publisher": "open-devs",
-  "description": "This extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges while also changes theme to dark mode automatically in the evening if not already set as dark. Comes with lot of configurations to control time of reminder, interval, water amount in a day you want to intake and more",
+  "preview": true,
+  "galleryBanner": {
+    "color": "#80FB90",
+    "theme": "dark"
+  },
+  "icon": "static/images/relax-a-little-logo.png",
+  "description": "This extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges. Comes with lot of configurations to control time of reminder, interval, water drinking intervals and more",
   "version": "0.0.2",
   "author": {
     "name": "open devs",
