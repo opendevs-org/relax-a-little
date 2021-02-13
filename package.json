@@ -117,7 +117,7 @@
     "lint": "eslint .",
     "pretest": "yarn run lint",
     "test": "node ./test/runTest.js",
-    "publish": "vsce package",
+    "publish": "vsce package && vsce publish",
     "pre:publish": "npm run build",
     "commit-a": "git add . && git cz",
     "commit": "git cz"
