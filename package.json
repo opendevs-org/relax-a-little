@@ -4,12 +4,12 @@
   "publisher": "open-devs",
   "preview": true,
   "galleryBanner": {
-    "color": "#80FB90",
+    "color": "#1E1E1E",
     "theme": "dark"
   },
   "icon": "static/images/relax-a-little-logo.png",
   "description": "This extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges. Comes with lot of configurations to control time of reminder, interval, water drinking intervals and more",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": {
     "name": "open devs",
     "email": "open.devs.github@gmail.com",
