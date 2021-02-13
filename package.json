@@ -9,7 +9,7 @@
   },
   "icon": "static/images/relax-a-little-logo.png",
   "description": "This extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges. Comes with lot of configurations to control time of reminder, interval, water drinking intervals and more",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "open devs",
     "email": "open.devs.github@gmail.com",
@@ -117,6 +117,8 @@
     "lint": "eslint .",
     "pretest": "yarn run lint",
     "test": "node ./test/runTest.js",
+    "publish": "vsce package",
+    "pre:publish": "npm run build",
     "commit-a": "git add . && git cz",
     "commit": "git cz"
   },
