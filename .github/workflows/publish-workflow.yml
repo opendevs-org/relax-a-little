@@ -1,9 +1,8 @@
-name: vsixviewer
+name: relaxALittle
 
 on:
   push:
-    branches: 
-      - 'feature/**' # match an pushes on feature/* and feature/<any sub branch>/*
+    branches:
       - master
     paths-ignore: # dont run when changes made to these folders 
       - '.vscode/**'
