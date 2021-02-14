@@ -54,7 +54,8 @@
     "vscode:prepublish": "webpack --mode production",
     "deploy": "vsce publish -p",
     "commit-a": "git add . && git cz",
-    "commit": "git cz"
+    "commit": "git cz",
+    "ci": "yarn install --frozen-lockfile"
   },
   "activationEvents": [
     "*"
