@@ -50,8 +50,8 @@ jobs:
           files: "${{github.workspace}}/package.json"
           patch-syntax: |
             = /version => "${{ steps.gitversion.outputs.semVer }}"
-            = /displayName => "VSIX Viewer"
-            = /description => "A simple viewer for VSIX files, which lets you see the contents of VSIX files within Visual Studio Code."
+            = /displayName => "Relax a Little"
+            = /description => "This extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges. Comes with lot of configurations to control time of reminder, interval, water drinking intervals and more."
 
       - name: add version in CHANGELOG.md
         uses: cschleiden/replace-tokens@v1.0
