@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    paths-ignore: # dont run when changes made to these folders 
-      - '.vscode/**'
+    paths-ignore: # dont run when changes made to these folders
+      - ".vscode/**"
 
 jobs:
   cicd:
@@ -14,19 +14,21 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: fetch all history and tags from all branches for gitversion
         run: git fetch --prune --unshallow
 
       - name: install gitversion tool
-        uses: gittools/actions/gitversion/setup@v0.9
+        uses: gittools/actions/gitversion/setup@v0.9.7
         with:
-            versionSpec: '5.1.x'
-      
+          versionSpec: "5.x"
+
       - name: execute gitversion
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.9
-        
+        uses: gittools/actions/gitversion/execute@v0.9.7
+
       - name: print gitversion
         run: |
           echo "Major: ${{ steps.gitversion.outputs.major }}"
@@ -37,24 +39,24 @@ jobs:
       - name: setup node
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
-        
+          node-version: "12.x"
+
       - name: clean install dependencies
         run: npm ci
 
       - name: update metadata in package.json
         uses: onlyutkarsh/patch-files-action@v1.0.1
         with:
-          files: '${{github.workspace}}/package.json'
+          files: "${{github.workspace}}/package.json"
           patch-syntax: |
             = /version => "${{ steps.gitversion.outputs.semVer }}"
             = /displayName => "VSIX Viewer"
             = /description => "A simple viewer for VSIX files, which lets you see the contents of VSIX files within Visual Studio Code."
-      
+
       - name: add version in CHANGELOG.md
         uses: cschleiden/replace-tokens@v1.0
         with:
-          files: '${{github.workspace}}/CHANGELOG.md'
+          files: "${{github.workspace}}/CHANGELOG.md"
         env:
           VERSION: "${{ steps.gitversion.outputs.semVer }}"
 
@@ -70,7 +72,7 @@ jobs:
         with:
           name: vsix-viewer-${{steps.gitversion.outputs.semVer}}.vsix
           path: ${{github.workspace}}/vsix-viewer-${{steps.gitversion.outputs.semVer}}.vsix
-      
+
       - name: publish to marketplace
         if: github.ref == 'refs/heads/master'
         run: npm run deploy ${{ env.PAT }}

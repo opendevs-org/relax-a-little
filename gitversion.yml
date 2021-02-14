@@ -1,0 +1,10 @@
+mode: Mainline
+next-version: 0.0.7
+branches:
+  feature:
+    tag: beta
+  pull-request:
+    tag: pr
+ignore:
+  sha: []
+merge-message-formats: {}
