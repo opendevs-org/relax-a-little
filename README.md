@@ -7,6 +7,7 @@
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/open-devs/relax-a-little#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/open-devs/relax-a-little/graphs/commit-activity)
 [![Twitter: opendevs\_2020](https://img.shields.io/twitter/follow/opendevs\_2020.svg?style=social)](https://twitter.com/opendevs\_2020)
+![relaxALittle](https://github.com/open-devs/relax-a-little/workflows/relaxALittle/badge.svg)
 
 > this extension provides tools to relax like giving reminders to look somewhere else, drink water, walk, do some lunges or best of all, slowly fades out the colors until you take your hands off the keyboard for a moment. comes with lot of configurations to control time of reminder, interval, water drinking intervals and more
 
