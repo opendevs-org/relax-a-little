@@ -12,3 +12,5 @@ tmp/**
 .*
 tsconfig.json
 webpack.config.json
+webpack.*
+jsconfig.json

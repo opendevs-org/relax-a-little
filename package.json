@@ -1,5 +1,7 @@
 {
   "name": "relax-a-little",
+  "version": "0.0.6",
+  "description": "This extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges. Comes with lot of configurations to control time of reminder, interval, water drinking intervals and more",
   "displayName": "Relax a Little",
   "publisher": "open-devs",
   "preview": true,
@@ -8,8 +10,7 @@
     "theme": "dark"
   },
   "icon": "static/images/relax-a-little-logo.png",
-  "description": "This extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges. Comes with lot of configurations to control time of reminder, interval, water drinking intervals and more",
-  "version": "0.0.5",
+  "main": "dist/extension.js",
   "author": {
     "name": "open devs",
     "email": "open.devs.github@gmail.com",
@@ -35,20 +36,46 @@
     "Other"
   ],
   "keywords": [
-    "day",
-    "night",
     "relax",
     "break",
-    "sunrise",
-    "sunset",
+    "water",
+    "activity",
     "switch",
     "theme",
     "vscode"
   ],
+  "scripts": {
+    "dev": "webpack --mode development --progress",
+    "build": "webpack --mode production",
+    "lint": "eslint .",
+    "pretest": "yarn run lint",
+    "test": "node ./test/runTest.js",
+    "package": "vsce package",
+    "vscode:prepublish": "webpack --mode production",
+    "deploy": "vsce publish -p",
+    "commit-a": "git add . && git cz",
+    "commit": "git cz"
+  },
   "activationEvents": [
     "*"
   ],
-  "main": "./src/extension.js",
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^2.0.0",
+    "eslint": "^7.19.0",
+    "git-cz": "^4.7.6",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "vsce": "^1.74.0",
+    "vscode-test": "^1.5.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.21.1",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "chroma-js": "^2.1.0",
+    "json5": "^2.2.0"
+  },
   "contributes": {
     "commands": [{
         "command": "relaxALittle.enableExtension",
@@ -110,33 +137,5 @@
         }
       }
     }
-  },
-  "scripts": {
-    "dev": "webpack --mode development --progress",
-    "build": "webpack --mode production",
-    "lint": "eslint .",
-    "pretest": "yarn run lint",
-    "test": "node ./test/runTest.js",
-    "publish": "vsce package && vsce publish",
-    "pre-publish": "npm run build",
-    "commit-a": "git add . && git cz",
-    "commit": "git cz"
-  },
-  "devDependencies": {
-    "@release-it/conventional-changelog": "^2.0.0",
-    "eslint": "^7.19.0",
-    "git-cz": "^4.7.6",
-    "glob": "^7.1.6",
-    "mocha": "^8.2.1",
-    "vsce": "^1.74.0",
-    "vscode-test": "^1.5.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "terser-webpack-plugin": "^5.1.1",
-    "webpack": "^5.21.1",
-    "webpack-cli": "^4.5.0"
-  },
-  "dependencies": {
-    "chroma-js": "^2.1.0",
-    "json5": "^2.2.0"
   }
 }
