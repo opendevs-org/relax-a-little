@@ -16,3 +16,4 @@ webpack.*
 jsconfig.json
 gitversion.yml
 .github/**
+test/*

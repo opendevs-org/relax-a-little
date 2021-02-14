@@ -60,7 +60,6 @@ const activate = (context) => {
   context.subscriptions.push(window.onDidChangeActiveTextEditor(onActivity))
   context.subscriptions.push(window.onDidChangeTextEditorViewColumn(onActivity))
   context.subscriptions.push(window.onDidChangeTextEditorSelection(onActivity))
-  context.subscriptions.push(window.onDidChangeActiveTextEditor(onActivity))
 
   context.subscriptions.push(workspace.onDidChangeConfiguration(configChanged))
 

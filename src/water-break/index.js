@@ -13,12 +13,12 @@ const start = (config) => {
   alreadyRunning = true
   timer = setInterval(() => {
     if (config.enableBlockingNotification) {
-      window.showInformationMessage('It\'s time to drink Water. 👀💧', 'alright!')
+      window.showInformationMessage('It\'s time to drink Water. 🥤', 'alright!')
     }
     if (!statusBarItem) {
       statusBarItem = window.createStatusBarItem(StatusBarAlignment.Right)
     }
-    statusBarItem.text = 'Please take a water break now!'
+    statusBarItem.text = 'Please take a water break now! 💧'
     statusBarItem.show()
 
     setTimeout(() => {

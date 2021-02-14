@@ -50,10 +50,7 @@ const update = (config) => {
       if (!statusBarItem) {
         statusBarItem = window.createStatusBarItem(StatusBarAlignment.Right)
       }
-      if(config.enableBlockingNotification) { 
-        window.showInformationMessage('Please take a little break now! ⏳', 'alright!')
-      }
-      statusBarItem.text = 'Please take a little break now!'
+      statusBarItem.text = 'Please take a little break now! ⏳'
       statusBarItem.show()
     }
   }

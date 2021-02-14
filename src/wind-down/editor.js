@@ -2,7 +2,7 @@ const { workspace, extensions, window } = require('vscode')
 const { readFileSync } = require('fs')
 const path = require('path')
 const chroma = require('chroma-js')
-const json5 = require('json5')
+const parse = require('json5/lib/parse')
 // const { getConfig } = require('../utils/index')
 
 /**
@@ -11,7 +11,6 @@ const json5 = require('json5')
  * @returns colors and tokenRules
  */
 const getThemeColors = (themeName) => {
-  // workaround for https://github.com/Microsoft/vscode/issues/32813
   let currentThemePath = null
   for (const extension of extensions.all) {
     if (extension.packageJSON.contributes && extension.packageJSON.contributes.themes) {
@@ -30,11 +29,11 @@ const getThemeColors = (themeName) => {
   }
 
   let colors = {}
-  colors['statusBar.background'] = '#007ACC' // missing default
+  colors['statusBar.background'] = '#007ACC'
   let tokenRules = []
   while (themePaths.length > 0) {
     const themePath = themePaths.pop()
-    const theme = json5.parse(readFileSync(themePath).toString())
+    const theme = parse(readFileSync(themePath).toString())
     if ('include' in theme) {
       themePaths.push(path.join(path.dirname(themePath), theme.include))
     }
@@ -82,6 +81,7 @@ exports.setSaturation = (fraction) => {
   const workbench = workspace.getConfiguration('workbench')
   const colors = getThemeColors(workbench.colorTheme)
 
+  // @ts-ignore
   const desaturate = (color) => chroma.hex(color).desaturate((1 - fraction) * 5).hex()
 
   const newColors = {}

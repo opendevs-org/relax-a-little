@@ -60,22 +60,23 @@
   "activationEvents": [
     "*"
   ],
-  "devDependencies": {
-    "@release-it/conventional-changelog": "^2.0.0",
-    "eslint": "^7.19.0",
-    "git-cz": "^4.7.6",
-    "glob": "^7.1.6",
-    "mocha": "^8.2.1",
-    "vsce": "^1.74.0",
-    "vscode-test": "^1.5.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "terser-webpack-plugin": "^5.1.1",
-    "webpack": "^5.21.1",
-    "webpack-cli": "^4.5.0"
-  },
   "dependencies": {
     "chroma-js": "^2.1.0",
     "json5": "^2.2.0"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^2.0.0",
+    "eslint": "^7.20.0",
+    "git-cz": "^4.7.6",
+    "glob": "^7.1.6",
+    "mocha": "^8.3.0",
+    "vsce": "^1.85.0",
+    "vscode": "^1.1.37",
+    "vscode-test": "^1.5.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
   },
   "contributes": {
     "commands": [{
@@ -108,13 +109,13 @@
       "title": "Relax a Little",
       "properties": {
         "relaxALittle.minutesTillBreak": {
-          "minimum": 1,
+          "minimum": 10,
           "type": "number",
           "default": 25,
           "description": "Time in minutes until theme colors start fading out."
         },
         "relaxALittle.winddownDurationMinutes": {
-          "minimum": 1,
+          "minimum": 3,
           "type": "number",
           "default": 3,
           "description": "Time in minutes until theme colors have fully faded out."
@@ -127,14 +128,21 @@
         },
         "relaxALittle.winddownFramesPerMinute": {
           "type": "number",
+          "minimum": 1,
           "default": 6,
+          "maximum": 60,
           "description": "Color update frequency during winddown phase. Usually you do not need to change this. Lower it if you are distracted by screen flashes, increase it for smoother color transitions. Must be between 1 and 60."
         },
         "relaxALittle.minutesTillWaterBreak": {
-          "minimum": 1,
+          "minimum": 10,
           "type": "number",
           "default": 15,
           "description": "Time in minutes until water break."
+        },
+        "relaxALittle.enableBlockingNotification": {
+          "type": "boolean",
+          "default": true,
+          "description": "Do you want blocking notifications from time to time? Turn this off if you prefer text in bottom bar only."
         }
       }
     }
