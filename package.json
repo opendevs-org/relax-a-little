@@ -1,6 +1,6 @@
 {
   "name": "relax-a-little",
-  "version": "0.0.6",
+  "version": "0.1.1",
   "description": "This extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges. Comes with lot of configurations to control time of reminder, interval, water drinking intervals and more",
   "displayName": "Relax a Little",
   "publisher": "open-devs",
