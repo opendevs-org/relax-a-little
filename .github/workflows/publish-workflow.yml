@@ -18,7 +18,7 @@ jobs:
           fetch-depth: 0
 
       - name: fetch all history and tags from all branches for gitversion
-        run: git fetch --prune --unshallow
+        run: git fetch --prune
 
       - name: install gitversion tool
         uses: gittools/actions/gitversion/setup@v0.9.7
