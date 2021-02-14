@@ -21,7 +21,6 @@ jobs:
         run: |
           git fetch --prune
           git fetch --tags
-          git branch --create-reflog main origin/main
 
       - name: install gitversion tool
         uses: gittools/actions/gitversion/setup@v0.9.7
