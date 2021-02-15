@@ -13,7 +13,7 @@
 
 **🔴 WARNING! this plugin will overwrite `workbench.colorCustomizations` and `editor.tokenColorCustomizations`.**
 
-## support us
+## 🙌 support us
 
 **save money on medications instead give a ⭐️ if this project helped you &**
 
@@ -40,6 +40,28 @@ In status bar:
 ## installation
 
 [install relax-a-little from the vs code marketplace](https://marketplace.visualstudio.com/items?itemName=open-devs.relax-a-little)
+
+## ⚡ Available Configurations
+
+| Configuration                                | Description                                          |
+| ----------------------------------------------| ----------------------------------------------------- |
+| <kbd>relaxALittle.minutesTillBreak</kbd>      | Time in minutes until theme colors start fading out.   |
+| <kbd>relaxALittle.winddownDurationMinutes</kbd> | Time in minutes until theme colors have fully faded out. |
+| <kbd>relaxALittle.breakDurationMinutes</kbd>       | Time in minutes until theme colors are reset to normal. |
+| <kbd>relaxALittle.winddownFramesPerMinute</kbd>    | Color update frequency during winddown phase. Usually you do not need to change this. Lower it if you are distracted by screen flashes, increase it for smoother color transitions. Must be between 1 and 60.   |
+| <kbd>relaxALittle.minutesTillWaterBreak</kbd>   | Time in minutes until water break.        |
+| <kbd>relaxALittle.enableBlockingNotification</kbd>        | Do you want blocking notifications from time to time? Turn this off if you prefer text in bottom bar only.            |
+
+## ⚡ Available Commands
+
+| Command                                | Description                                          |
+| ----------------------------------------------| ----------------------------------------------------- |
+| <kbd>relaxALittle.enableExtension</kbd>      | Enable extension.   |
+| <kbd>relaxALittle.disableExtension</kbd> | Disable extension. |
+| <kbd>relaxALittle.enableWinddown</kbd>       | Enable Winddown. |
+| <kbd>relaxALittle.disableWinddown</kbd>    | Disable Winddown.   |
+| <kbd>relaxALittle.enableWaterBreak</kbd>   | Enable Water Break.        |
+| <kbd>relaxALittle.disableWaterBreak</kbd>        | Disable Water Break.            |
 
 ## development
 
