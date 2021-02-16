@@ -7,7 +7,7 @@
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/open-devs/relax-a-little#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/open-devs/relax-a-little/graphs/commit-activity)
 [![Twitter: opendevs\_2020](https://img.shields.io/twitter/follow/opendevs\_2020.svg?style=social)](https://twitter.com/opendevs\_2020)
-![relaxALittle](https://github.com/open-devs/relax-a-little/workflows/relaxALittle/badge.svg)
+![relax-a-little](https://github.com/open-devs/relax-a-little/workflows/relax-a-little/badge.svg)
 
 > this extension provides tools to relax like giving reminders to look somewhere else, drink water, walk, do some lunges or best of all, slowly fades out the colors until you take your hands off the keyboard for a moment. comes with lot of configurations to control time of reminder, interval, water drinking intervals and more
 
@@ -17,7 +17,7 @@
 
 **save money on medications instead give a ⭐️ if this project helped you &**
 
-<a href="https://www.buymeacoffee.com/opendevs" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+<a href="https://www.buymeacoffee.com/opendevs" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 ## 🏠 [homepage](https://github.com/open-devs/relax-a-little)
 
@@ -25,13 +25,13 @@
 
 ### winddown feature
 
-![winddown feature](static/images/demo.gif)
+![winddown feature](https://raw.githubusercontent.com/open-devs/relax-a-little/main/static/images/demo.gif)
 
 ### water break feature
 
-In status bar:
+in status bar:
 
-![water break feature](static/images/water-break.png)
+![water break feature](https://raw.githubusercontent.com/open-devs/relax-a-little/main/static/images/water-break.png)
 
 ## prerequisites
 
@@ -41,32 +41,32 @@ In status bar:
 
 [install relax-a-little from the vs code marketplace](https://marketplace.visualstudio.com/items?itemName=open-devs.relax-a-little)
 
-## ⚡ Available Configurations
+## ⚡ available configurations
 
-| Configuration                                | Description                                          |
+| configuration                                | description                                          |
 | ----------------------------------------------| ----------------------------------------------------- |
-| <kbd>relaxALittle.minutesTillBreak</kbd>      | Time in minutes until theme colors start fading out.   |
-| <kbd>relaxALittle.winddownDurationMinutes</kbd> | Time in minutes until theme colors have fully faded out. |
-| <kbd>relaxALittle.breakDurationMinutes</kbd>       | Time in minutes until theme colors are reset to normal. |
-| <kbd>relaxALittle.winddownFramesPerMinute</kbd>    | Color update frequency during winddown phase. Usually you do not need to change this. Lower it if you are distracted by screen flashes, increase it for smoother color transitions. Must be between 1 and 60.   |
-| <kbd>relaxALittle.minutesTillWaterBreak</kbd>   | Time in minutes until water break.        |
-| <kbd>relaxALittle.enableBlockingNotification</kbd>        | Do you want blocking notifications from time to time? Turn this off if you prefer text in bottom bar only.            |
+| <kbd>relax.minutesTillBreak</kbd>      | time in minutes until theme colors start fading out.   |
+| <kbd>relax.winddownDurationMinutes</kbd> | time in minutes until theme colors have fully faded out. |
+| <kbd>relax.breakDurationMinutes</kbd>       | time in minutes until theme colors are reset to normal. |
+| <kbd>relax.winddownFramesPerMinute</kbd>    | color update frequency during winddown phase. usually you do not need to change this. lower it if you are distracted by screen flashes, increase it for smoother color transitions. Must be between 1 and 60.   |
+| <kbd>relax.minutesTillWaterBreak</kbd>   | time in minutes until water break.        |
+| <kbd>relax.enableBlockingNotification</kbd>        | do you want blocking notifications from time to time? Turn this off if you prefer text in bottom bar only.            |
 
-## ⚡ Available Commands
+## ⚡ available commands
 
-| Command                                | Description                                          |
+| command                                | description                                          |
 | ----------------------------------------------| ----------------------------------------------------- |
-| <kbd>relaxALittle.enableExtension</kbd>      | Enable extension.   |
-| <kbd>relaxALittle.disableExtension</kbd> | Disable extension. |
-| <kbd>relaxALittle.enableWinddown</kbd>       | Enable Winddown. |
-| <kbd>relaxALittle.disableWinddown</kbd>    | Disable Winddown.   |
-| <kbd>relaxALittle.enableWaterBreak</kbd>   | Enable Water Break.        |
-| <kbd>relaxALittle.disableWaterBreak</kbd>        | Disable Water Break.            |
+| <kbd>relax.enableExtension</kbd>      | enable extension.   |
+| <kbd>relax.disableExtension</kbd> | disable extension. |
+| <kbd>relax.enableWinddown</kbd>       | enable winddown. |
+| <kbd>relax.disableWinddown</kbd>    | disable winddown.   |
+| <kbd>relax.enableWaterBreak</kbd>   | enable water break.        |
+| <kbd>relax.disableWaterBreak</kbd>        | disable water break.            |
 
 ## development
 
 - `npm install` or `yarn`
-- in vs code, "Run", "Start Debugging" or press `F5`
+- in vs code, "Run", "Start debugging" or press `F5`
 
 ## Publishing
 

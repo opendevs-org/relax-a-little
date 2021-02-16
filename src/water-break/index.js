@@ -6,19 +6,19 @@ let statusBarItem
 
 const start = (config) => {
   if (alreadyRunning) {
-    window.showInformationMessage('water break is already running', 'alright')
+    window.showInformationMessage('water break is already running')
     return
   }
 
   alreadyRunning = true
   timer = setInterval(() => {
     if (config.enableBlockingNotification) {
-      window.showInformationMessage('It\'s time to drink Water. 🥤', 'alright!')
+      window.showInformationMessage('it\'s time to drink water. 🥤', 'alright!')
     }
     if (!statusBarItem) {
       statusBarItem = window.createStatusBarItem(StatusBarAlignment.Right)
     }
-    statusBarItem.text = 'Please take a water break now! 💧'
+    statusBarItem.text = 'please take a water break now! 💧'
     statusBarItem.show()
 
     setTimeout(() => {
@@ -29,7 +29,7 @@ const start = (config) => {
 
 const stop = () => {
   if (!alreadyRunning) {
-    window.showInformationMessage('water break is already stopped', 'alright')
+    window.showInformationMessage('water break is already stopped')
     return
   }
   if (statusBarItem) {

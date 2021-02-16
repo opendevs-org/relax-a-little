@@ -63,12 +63,12 @@ const activate = (context) => {
 
   context.subscriptions.push(workspace.onDidChangeConfiguration(configChanged))
 
-  commands.registerCommand('relaxALittle.enableExtension', start)
-  commands.registerCommand('relaxALittle.disableExtension', deactivate)
-  commands.registerCommand('relaxALittle.enableWinddown', () => winddownStart(getConfig()))
-  commands.registerCommand('relaxALittle.disableWinddown', winddownStop)
-  commands.registerCommand('relaxALittle.enableWaterBreak', () => waterBreakStart(getConfig()))
-  commands.registerCommand('relaxALittle.disableWaterBreak', waterBreakStop)
+  commands.registerCommand('relax.enableExtension', start)
+  commands.registerCommand('relax.disableExtension', deactivate)
+  commands.registerCommand('relax.enableWinddown', () => winddownStart(getConfig()))
+  commands.registerCommand('relax.disableWinddown', winddownStop)
+  commands.registerCommand('relax.enableWaterBreak', () => waterBreakStart(getConfig()))
+  commands.registerCommand('relax.disableWaterBreak', waterBreakStop)
 }
 
 // this method is called when your extension is deactivated

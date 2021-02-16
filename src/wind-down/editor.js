@@ -3,6 +3,7 @@ const { readFileSync } = require('fs')
 const path = require('path')
 const chroma = require('chroma-js')
 const parse = require('json5/lib/parse')
+const { applySettings } = require('../utils')
 // const { getConfig } = require('../utils/index')
 
 /**
@@ -49,26 +50,6 @@ const getThemeColors = (themeName) => {
     colors,
     tokenRules,
   }
-}
-
-/**
- * Update the workspace configuration file.
- * @param {Object} settings key-values to write into the configuration
- */
-const applySettings = (settings) => {
-  if (!settings) {
-    return // no settings, nothing to do
-  }
-  const workspaceSettings = workspace.getConfiguration()
-  Object.keys(settings).forEach((k) => {
-    workspaceSettings.update(k, settings[k], true).then(undefined, (reason) => {
-      console.error(reason)
-      window.showErrorMessage(
-        `You tried to apply \`${ k }: ${ settings[k] }\` but this is not a valid VS Code settings
-          key/value pair.`
-      )
-    })
-  })
 }
 
 /**

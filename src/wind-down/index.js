@@ -3,15 +3,12 @@ const { getConfig } = require('../utils/index')
 // @ts-ignore
 const { reset: resetEditor, setSaturation } = require('./editor')
 
-let firstActive // end of last break
-let lastActive // last activity
+let firstActive = Date.now() // end of last break
+let lastActive = Date.now() // last activity
 let currentSaturation = 1.0
 let timer
 let statusBarItem
 let alreadyRunning = false
-
-firstActive = Date.now()
-lastActive = Date.now()
 
 const reset = () => {
   resetEditor()
@@ -50,7 +47,7 @@ const update = (config) => {
       if (!statusBarItem) {
         statusBarItem = window.createStatusBarItem(StatusBarAlignment.Right)
       }
-      statusBarItem.text = 'Please take a little break now! ⏳'
+      statusBarItem.text = 'please take a little break now! ⏳'
       statusBarItem.show()
     }
   }
