@@ -1,6 +1,6 @@
 # relax a little ☕
 
-## write code 👨‍💻 while staying healthy 💪 (CURRENTLY IN PREVIEW)
+## write code 👨‍💻 while staying healthy 💪
 
 ![Version](https://img.shields.io/badge/version-0.0.2-blue.svg?cacheSeconds=2592000)
 ![Prerequisite](https://img.shields.io/badge/vscode-%5E1.52.0-blue.svg)
