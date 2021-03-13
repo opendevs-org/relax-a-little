@@ -101,6 +101,10 @@
       {
         "command": "relax.disableWaterBreak",
         "title": "relax-a-little: Disable Water Break"
+      },
+      {
+        "command": "relax.selectThemeConfiguration",
+        "title": "relax-a-little: Select Theme Configuration for Theme changer"
       }
     ],
     "configuration": {
@@ -142,6 +146,25 @@
           "type": "boolean",
           "default": true,
           "description": "do you want blocking notifications from time to time? turn this off if you prefer text in bottom bar only."
+        },
+        "relax.dayTime": {
+          "type": "string",
+          "format": "time",
+          "pattern": "^[0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$",
+          "description": "when you want to enable light theme (in 24 hour format: HH:MM)"
+        },
+        "relax.nightTime": {
+          "type": "string",
+          "format": "time",
+          "pattern": "^[0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$",
+          "description": "when you want to enable dark theme (in 24 hour format: HH:MM)"
+        },
+        "relax.themeConfig": {
+          "type": "object",
+          "default": {
+            "lightTheme": "",
+            "darkTheme": ""
+          }
         }
       }
     }
