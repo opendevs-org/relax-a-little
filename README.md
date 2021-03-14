@@ -2,7 +2,7 @@
 
 ## write code 👨‍💻 while staying healthy 💪
 
-![Version](https://img.shields.io/badge/version-0.0.2-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-0.2.0-blue.svg?cacheSeconds=2592000)
 ![Prerequisite](https://img.shields.io/badge/vscode-%5E1.52.0-blue.svg)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/open-devs/relax-a-little#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/open-devs/relax-a-little/graphs/commit-activity)
@@ -51,6 +51,7 @@ in status bar:
 | <kbd>relax.winddownFramesPerMinute</kbd>    | color update frequency during winddown phase. usually you do not need to change this. lower it if you are distracted by screen flashes, increase it for smoother color transitions. Must be between 1 and 60.   |
 | <kbd>relax.minutesTillWaterBreak</kbd>   | time in minutes until water break.        |
 | <kbd>relax.enableBlockingNotification</kbd>        | do you want blocking notifications from time to time? Turn this off if you prefer text in bottom bar only.            |
+| <kbd>relax.minutesTillBreakAlert</kbd>        | time in minutes after which extension will ask to take break.            |
 
 ## ⚡ available commands
 
@@ -62,6 +63,8 @@ in status bar:
 | <kbd>relax.disableWinddown</kbd>    | disable winddown.   |
 | <kbd>relax.enableWaterBreak</kbd>   | enable water break.        |
 | <kbd>relax.disableWaterBreak</kbd>        | disable water break.            |
+| <kbd>relax.enableBreakAlert</kbd>        | enable break alert.            |
+| <kbd>relax.disableBreakAlert</kbd>        | disable break alert.            |
 
 ## development
 
