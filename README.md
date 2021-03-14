@@ -9,7 +9,7 @@
 [![Twitter: opendevs\_2020](https://img.shields.io/twitter/follow/opendevs\_2020.svg?style=social)](https://twitter.com/opendevs\_2020)
 ![relax-a-little](https://github.com/open-devs/relax-a-little/workflows/relax-a-little/badge.svg)
 
-> this extension provides tools to relax like giving reminders to look somewhere else, drink water, walk, do some lunges or best of all, slowly fades out the colors until you take your hands off the keyboard for a moment. comes with lot of configurations to control time of reminder, interval, water drinking intervals and more
+> this extension provides tools to relax like giving reminders to look somewhere else, drink water, walk, do some lunges or best of all, slowly fades out the colors until you take your hands off the keyboard for a moment. comes with lot of configurations to control time of reminder, interval, water drinking intervals, generic break alert and more
 
 **🔴 WARNING! this plugin will overwrite `workbench.colorCustomizations` and `editor.tokenColorCustomizations`.**
 
