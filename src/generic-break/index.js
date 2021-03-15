@@ -10,6 +10,10 @@ const start = (config) => {
     return
   }
 
+  if (config.minutesTillGenericBreakAlert === 0) {
+    return
+  }
+
   alreadyRunning = true
   timer = setInterval(() => {
     if (config.enableBlockingNotification) {
@@ -24,7 +28,7 @@ const start = (config) => {
     setTimeout(() => {
       statusBarItem.hide()
     }, 10 * 1000)
-  }, 1000 * 60 * config.minutesTillBreakAlert)
+  }, 1000 * 60 * config.minutesTillGenericBreakAlert)
 }
 
 const stop = () => {

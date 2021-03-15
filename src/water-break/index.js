@@ -10,6 +10,10 @@ const start = (config) => {
     return
   }
 
+  if (config.minutesTillWaterBreak === 0) {
+    return
+  }
+
   alreadyRunning = true
   timer = setInterval(() => {
     if (config.enableBlockingNotification) {

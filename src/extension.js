@@ -4,10 +4,7 @@ const { window, ExtensionContext, commands, workspace, } = require('vscode')
 const { getConfig, checkAffectConfig } = require('./utils')
 const { start: winddownStart, stop: winddownStop, configure: winddownConfigure, logActivity: winddownLogActivity } = require('./wind-down/index')
 const { start: waterBreakStart, stop: waterBreakStop, reset: waterBreakReset } = require('./water-break/index')
-const { start: breakStart, stop: breakStop, reset: breakReset } = require('./break/index')
-
-// this method is called when your extension is activated
-// your extension is activated the very first time the command is executed
+const { start: genericBreakStart, stop: genericBreakStop, reset: genericBreakReset } = require('./generic-break/index')
 
 /**
  * Log user activity.
@@ -29,7 +26,7 @@ const onChange = () => {
 const reconfigure = () => {
   winddownConfigure(getConfig())
   waterBreakReset(getConfig())
-  breakReset(getConfig())
+  genericBreakReset(getConfig())
 }
 
 
@@ -48,7 +45,7 @@ const configChanged = (event) => {
 const start = () => {
   winddownStart(getConfig())
   waterBreakStart(getConfig())
-  breakStart(getConfig())
+  genericBreakReset(getConfig())
 }
 
 /**
@@ -72,14 +69,15 @@ const activate = (context) => {
   commands.registerCommand('relax.disableWinddown', winddownStop)
   commands.registerCommand('relax.enableWaterBreak', () => waterBreakStart(getConfig()))
   commands.registerCommand('relax.disableWaterBreak', waterBreakStop)
-  commands.registerCommand('relax.enableBreakAlert', () => breakStart(getConfig()))
-  commands.registerCommand('relax.disableBreakAlert', breakStop)
+  commands.registerCommand('relax.enableGenericBreakAlert', () => genericBreakStart(getConfig()))
+  commands.registerCommand('relax.disableGenericBreakAlert', genericBreakStop)
 }
 
 // this method is called when your extension is deactivated
 const deactivate = () => {
   winddownStop()
   waterBreakStop()
+  genericBreakStop()
 }
 
 module.exports = {

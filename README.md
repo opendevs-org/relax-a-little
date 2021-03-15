@@ -51,7 +51,7 @@ in status bar:
 | <kbd>relax.winddownFramesPerMinute</kbd>    | color update frequency during winddown phase. usually you do not need to change this. lower it if you are distracted by screen flashes, increase it for smoother color transitions. Must be between 1 and 60.   |
 | <kbd>relax.minutesTillWaterBreak</kbd>   | time in minutes until water break.        |
 | <kbd>relax.enableBlockingNotification</kbd>        | do you want blocking notifications from time to time? Turn this off if you prefer text in bottom bar only.            |
-| <kbd>relax.minutesTillBreakAlert</kbd>        | time in minutes after which extension will ask to take break.            |
+| <kbd>relax.minutesTillGenericBreakAlert</kbd>        | time in minutes after which extension will ask to take break.            |
 
 ## ⚡ available commands
 
@@ -63,8 +63,8 @@ in status bar:
 | <kbd>relax.disableWinddown</kbd>    | disable winddown.   |
 | <kbd>relax.enableWaterBreak</kbd>   | enable water break.        |
 | <kbd>relax.disableWaterBreak</kbd>        | disable water break.            |
-| <kbd>relax.enableBreakAlert</kbd>        | enable break alert.            |
-| <kbd>relax.disableBreakAlert</kbd>        | disable break alert.            |
+| <kbd>relax.enableGenericBreakAlert</kbd>        | enable generic break (alerts only without color change) alert.            |
+| <kbd>relax.disableGenericBreakAlert</kbd>        | disable generic break (alerts only without color change) alert.            |
 
 ## development
 
