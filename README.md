@@ -49,9 +49,9 @@ in status bar:
 | <kbd>relax.winddownDurationMinutes</kbd> | time in minutes until theme colors have fully faded out. |
 | <kbd>relax.breakDurationMinutes</kbd>       | time in minutes until theme colors are reset to normal. |
 | <kbd>relax.winddownFramesPerMinute</kbd>    | color update frequency during winddown phase. usually you do not need to change this. lower it if you are distracted by screen flashes, increase it for smoother color transitions. Must be between 1 and 60.   |
-| <kbd>relax.minutesTillWaterBreak</kbd>   | time in minutes until water break.        |
+| <kbd>relax.minutesTillWaterBreak</kbd>   | time in minutes until water break. (feature will be disabled if set to 0)       |
+| <kbd>relax.minutesTillGenericBreak</kbd>        | time in minutes after which extension will ask to take break (feature will be disabled if set to 0, disables winddown if active).            |
 | <kbd>relax.enableBlockingNotification</kbd>        | do you want blocking notifications from time to time? Turn this off if you prefer text in bottom bar only.            |
-| <kbd>relax.minutesTillGenericBreakAlert</kbd>        | time in minutes after which extension will ask to take break.            |
 
 ## ⚡ available commands
 

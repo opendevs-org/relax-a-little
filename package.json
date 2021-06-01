@@ -1,6 +1,6 @@
 {
   "name": "relax-a-little",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "this extension provides tools to relax like giving reminders to look somewhere else, drink water, walk or do some lunges. comes with lot of configurations to control time of reminder, interval, water drinking intervals and more",
   "displayName": "relax a little",
   "publisher": "open-devs",
@@ -48,7 +48,6 @@
     "build": "webpack --mode production",
     "lint": "eslint .",
     "pretest": "yarn run lint",
-    "test": "node ./test/runTest.js",
     "package": "vsce package",
     "vscode:prepublish": "webpack --mode production",
     "deploy": "vsce publish -p",
@@ -60,22 +59,19 @@
     "*"
   ],
   "dependencies": {
-    "chroma-js": "^2.1.0",
+    "chroma-js": "^2.1.2",
     "json5": "^2.2.0"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^2.0.0",
-    "eslint": "^7.20.0",
+    "@release-it/conventional-changelog": "^2.0.1",
+    "eslint": "^7.27.0",
     "git-cz": "^4.7.6",
-    "glob": "^7.1.6",
-    "mocha": "^8.3.0",
-    "vsce": "^1.85.0",
+    "vsce": "^1.91.0",
     "vscode": "^1.1.37",
-    "vscode-test": "^1.5.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "terser-webpack-plugin": "^5.1.1",
-    "webpack": "^5.21.2",
-    "webpack-cli": "^4.5.0"
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "terser-webpack-plugin": "^5.1.3",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
   },
   "contributes": {
     "commands": [{
@@ -116,7 +112,7 @@
       "title": "relax a little",
       "properties": {
         "relax.minutesTillBreak": {
-          "minimum": 10,
+          "minimum": 15,
           "type": "number",
           "default": 25,
           "description": "time in minutes until theme colors start fading out."
@@ -136,20 +132,20 @@
         "relax.winddownFramesPerMinute": {
           "type": "number",
           "minimum": 1,
-          "default": 6,
+          "default": 4,
           "maximum": 60,
           "description": "color update frequency during winddown phase. usually you do not need to change this. lower it if you are distracted by screen flashes, increase it for smoother color transitions. must be between 1 and 60."
         },
         "relax.minutesTillWaterBreak": {
           "minimum": 0,
           "type": "number",
-          "default": 15,
+          "default": 30,
           "description": "time in minutes until water break (feature will be disabled if set to 0)."
         },
-        "relax.minutesTillGenericBreakAlert": {
+        "relax.minutesTillGenericBreak": {
           "minimum": 0,
           "type": "number",
-          "default": 45,
+          "default": 0,
           "description": "time in minutes until generic break alert (feature will be disabled if set to 0)."
         },
         "relax.enableBlockingNotification": {

@@ -1,4 +1,7 @@
-const { window, StatusBarAlignment } = require('vscode')
+const {
+  window,
+  StatusBarAlignment
+} = require('vscode')
 
 let timer
 let alreadyRunning = false
@@ -10,7 +13,8 @@ const start = (config) => {
     return
   }
 
-  if (config.minutesTillGenericBreakAlert === 0) {
+  if (config.minutesTillGenericBreak === 0) {
+    alreadyRunning = false;
     return
   }
 
@@ -28,7 +32,7 @@ const start = (config) => {
     setTimeout(() => {
       statusBarItem.hide()
     }, 10 * 1000)
-  }, 1000 * 60 * config.minutesTillGenericBreakAlert)
+  }, 1000 * 60 * config.minutesTillGenericBreak)
 }
 
 const stop = () => {

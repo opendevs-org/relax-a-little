@@ -1,4 +1,7 @@
-const { window, StatusBarAlignment } = require('vscode')
+const {
+  window,
+  StatusBarAlignment
+} = require('vscode')
 
 let timer
 let alreadyRunning = false
@@ -11,6 +14,7 @@ const start = (config) => {
   }
 
   if (config.minutesTillWaterBreak === 0) {
+    alreadyRunning = false;
     return
   }
 

@@ -1,7 +1,15 @@
-const { window, StatusBarAlignment } = require('vscode')
-const { getConfig } = require('../utils/index')
+const {
+  window,
+  StatusBarAlignment
+} = require('vscode')
+const {
+  getConfig
+} = require('../utils/index')
 // @ts-ignore
-const { reset: resetEditor, setSaturation } = require('./editor')
+const {
+  reset: resetEditor,
+  setSaturation
+} = require('./editor')
 
 let firstActive = Date.now() // end of last break
 let lastActive = Date.now() // last activity
@@ -47,7 +55,7 @@ const update = (config) => {
       if (!statusBarItem) {
         statusBarItem = window.createStatusBarItem(StatusBarAlignment.Right)
       }
-      statusBarItem.text = 'please take a little break now! ⏳'
+      statusBarItem.text = 'please take a break now! ⏳'
       statusBarItem.show()
     }
   }

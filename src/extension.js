@@ -1,10 +1,31 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-const { window, ExtensionContext, commands, workspace, } = require('vscode')
-const { getConfig, checkAffectConfig } = require('./utils')
-const { start: winddownStart, stop: winddownStop, configure: winddownConfigure, logActivity: winddownLogActivity } = require('./wind-down/index')
-const { start: waterBreakStart, stop: waterBreakStop, reset: waterBreakReset } = require('./water-break/index')
-const { start: genericBreakStart, stop: genericBreakStop, reset: genericBreakReset } = require('./generic-break/index')
+const {
+  window,
+  ExtensionContext,
+  commands,
+  workspace,
+} = require('vscode')
+const {
+  getConfig,
+  checkAffectConfig
+} = require('./utils')
+const {
+  start: winddownStart,
+  stop: winddownStop,
+  configure: winddownConfigure,
+  logActivity: winddownLogActivity
+} = require('./wind-down/index')
+const {
+  start: waterBreakStart,
+  stop: waterBreakStop,
+  reset: waterBreakReset
+} = require('./water-break/index')
+const {
+  start: genericBreakStart,
+  stop: genericBreakStop,
+  reset: genericBreakReset
+} = require('./generic-break/index')
 
 /**
  * Log user activity.
@@ -45,7 +66,7 @@ const configChanged = (event) => {
 const start = () => {
   winddownStart(getConfig())
   waterBreakStart(getConfig())
-  genericBreakReset(getConfig())
+  genericBreakStart(getConfig())
 }
 
 /**
