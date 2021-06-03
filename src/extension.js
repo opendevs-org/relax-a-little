@@ -3,6 +3,7 @@
 const {
   window,
   ExtensionContext,
+  ViewColumn,
   commands,
   workspace,
 } = require('vscode')
@@ -26,6 +27,7 @@ const {
   stop: genericBreakStop,
   reset: genericBreakReset
 } = require('./generic-break/index')
+const { getWebviewContent } = require('./web-view')
 
 /**
  * Log user activity.
@@ -69,6 +71,16 @@ const start = () => {
   genericBreakStart(getConfig())
 }
 
+const showReadme = () => {
+      const panel = window.createWebviewPanel(
+        'openReadme',
+        'Relax A Little - README',
+        ViewColumn.One,
+        {}
+      );
+      panel.webview.html = getWebviewContent();
+}
+
 /**
  * @param {ExtensionContext} context
  */
@@ -92,6 +104,9 @@ const activate = (context) => {
   commands.registerCommand('relax.disableWaterBreak', waterBreakStop)
   commands.registerCommand('relax.enableGenericBreakAlert', () => genericBreakStart(getConfig()))
   commands.registerCommand('relax.disableGenericBreakAlert', genericBreakStop)
+  commands.registerCommand('relax.showReadme', showReadme)
+
+  commands.executeCommand('relax.showReadme')
 }
 
 // this method is called when your extension is deactivated
