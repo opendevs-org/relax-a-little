@@ -2,7 +2,7 @@
 
 ## write code 👨‍💻 while staying healthy 💪
 
-![Version](https://img.shields.io/badge/version-0.2.0-blue.svg?cacheSeconds=2592000)
+![Version](https://img.shields.io/badge/version-0.3.2-blue.svg?cacheSeconds=2592000)
 ![Prerequisite](https://img.shields.io/badge/vscode-%5E1.52.0-blue.svg)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/open-devs/relax-a-little#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/open-devs/relax-a-little/graphs/commit-activity)
