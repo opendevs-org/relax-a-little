@@ -30,6 +30,9 @@ const reset = () => {
  * Re-render the UI.
  */
 const update = (config) => {
+  if (!alreadyRunning)
+    return;
+
   const now = Date.now()
   const minutesSinceLastActive = (now - lastActive) / 1000 / 60
   const minutesSinceFirstActive = (now - firstActive) / 1000 / 60
