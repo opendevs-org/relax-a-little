@@ -1,4 +1,4 @@
-const { workspace, extensions, window } = require('vscode')
+const { workspace, extensions } = require('vscode')
 const { readFileSync } = require('fs')
 const path = require('path')
 const chroma = require('chroma-js')

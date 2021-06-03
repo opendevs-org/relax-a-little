@@ -9,7 +9,8 @@ const {
 } = require('vscode')
 const {
   getConfig,
-  checkAffectConfig
+  checkAffectConfig,
+  applySettings
 } = require('./utils')
 const {
   start: winddownStart,
@@ -72,13 +73,13 @@ const start = () => {
 }
 
 const showReadme = () => {
-      const panel = window.createWebviewPanel(
-        'openReadme',
-        'Relax A Little - README',
-        ViewColumn.One,
-        {}
-      );
-      panel.webview.html = getWebviewContent();
+  const panel = window.createWebviewPanel(
+    'openReadme',
+    'Relax A Little - README',
+    ViewColumn.One,
+    {}
+  );
+  panel.webview.html = getWebviewContent();
 }
 
 /**
@@ -106,7 +107,12 @@ const activate = (context) => {
   commands.registerCommand('relax.disableGenericBreakAlert', genericBreakStop)
   commands.registerCommand('relax.showReadme', showReadme)
 
-  commands.executeCommand('relax.showReadme')
+  if (getConfig().showReadmeOnLoad) {
+    showReadme();
+    applySettings({
+      'relax.showReadmeOnLoad': false,
+    })
+  }
 }
 
 // this method is called when your extension is deactivated

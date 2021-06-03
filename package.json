@@ -156,6 +156,11 @@
           "type": "boolean",
           "default": true,
           "description": "do you want blocking notifications from time to time? turn this off if you prefer text in bottom bar only."
+        },
+        "relax.showReadmeOnLoad": {
+          "type": "boolean",
+          "default": true,
+          "description": "do you want to show README on load?"
         }
       }
     }
