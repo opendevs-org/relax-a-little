@@ -1,1 +1,5 @@
-{}
+{
+    "conventionalCommits.scopes": [
+        "relax-a-little"
+    ]
+}
