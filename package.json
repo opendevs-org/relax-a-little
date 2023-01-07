@@ -58,7 +58,7 @@
   ],
   "dependencies": {
     "chroma-js": "^2.1.2",
-    "json5": "^2.2.0"
+    "json5": "^2.2.2"
   },
   "devDependencies": {
     "eslint": "^8.0.1",
